@@ -54,9 +54,7 @@ Cypress.Commands.add('login', () => {
   Cypress.Commands.add('tweet', (textTweet) => {
 
     cy.get("textarea[placeholder*='happening']").type(textTweet);
-    cy.get('button')
-        .should('contain', 'Tweet')
-        .click();
+    cy.get('.pDAkO').click();
     
   })
 
