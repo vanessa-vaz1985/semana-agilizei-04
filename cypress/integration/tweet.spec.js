@@ -11,17 +11,18 @@ beforeEach(() => {
 
 })
 
-describe('Twitter Clone - Login', () => {
-    it('Ao autenticar com credenciais válidas, deve ser direcionado para o feed', () => {
+describe.only('Twitter Clone - Tweet', () => {
+    it('Ao informar um texto válido e confirmar o tweet, deve ser exibida uma confirmação', () => {
 
         cy.login();
 
         cy.visit('/');
 
-        cy.get('nav ul li')
+        cy.tweet('agilizar a carreira, focando em automação de testes')
+    
+        cy.get('.Toastify__toast')
             .should('be.visible')
-            .and('have.length', 6);
-        
+            .and('contain', 'Your tweet has been posted');
     });
     
 });
